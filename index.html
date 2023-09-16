@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Vite + TS</title>
+    </head>
+    <body>
+        <div class="app">
+            <div class="app__outline">
+                <h1>Technical Assessment - Front-End Developer</h1>
+                This is a simple technical assessment designed to gauge your
+                technical abilities, specifically problem solving.
+                <h2>Task</h2>
+                <p>
+                    A common pattern in software architecture is the
+                    publish/subscribe pattern. The pub/sub pattern is a
+                    loosely-coupled, scalable architecture that enables clients
+                    to publish and subscribe to events via a central message
+                    broker known as an event bus.
+                </p>
+                <p>
+                    Your task is to complete the event bus implementation (found
+                    in the
+                    <strong>event-bus.ts</strong> file). The plumbing code has
+                    already been completed for you - you need only complete the
+                    4 empty method bodies in the
+                    <strong>event-bus.ts</strong> file (<em>on</em>,
+                    <em>once</em>, <em>off</em>, <em>emit</em>).
+                </p>
+                <p>
+                    You have as long as necessary to complete this task,
+                    however, it is expected that it should take around
+                    <strong>30 mins</strong> to complete.
+                </p>
+                <h3>Required Outcome</h3>
+                <p>
+                    Complete the 4 methods (<em>on</em>,
+                    <em>once</em>, <em>off</em>, <em>emit</em>) of the event bus
+                    implementation. Once all 4 methods are completed correctly,
+                    the following should occur (demonstrated in the
+                    <strong>Implementation</strong> section below):
+                </p>
+                <ul>
+                    <li>
+                        Clicking on the <strong>Emit Event</strong> buttons in
+                        the <strong>On</strong> pane should log the event name
+                        and value of the input to the output container as many
+                        times as the buttons are clicked.
+                    </li>
+                    <li>
+                        Clicking on the <strong>Emit Event</strong> buttons in
+                        the <strong>Once</strong> pane should log the event name
+                        and value of the input to the output container only
+                        once.
+                    </li>
+                </ul>
+                <h3>Assessment Criteria</h3>
+                <p>
+                    Although it is expected that you complete this task
+                    according to the requirements above, it is not the primary
+                    criteria by which you will be assessed. The main assessment
+                    criteria for this task will relate to
+                    <strong>problem solving</strong>,
+                    <strong>code style/readability</strong>,
+                    <strong>code quality/safety</strong>,
+                    <strong>knowledge of modern web standards</strong> etc.
+                </p>
+                <p>
+                    You will be asked questions relating to these criteria in
+                    your interview so take some time to brush up on any of these
+                    areas you feel you may be lacking.
+                </p>
+                <p>
+                    Also, be prepared to explain your approach to this solution
+                    in your interview.
+                </p>
+                <p>
+                    Above all, try your best, even if you can't complete the
+                    task. An incomplete but well-attempted solution is better
+                    than a poorly implemented working solution. Good luck!
+                </p>
+                <h2>Extension Task (Optional)</h2>
+                <p>
+                    If you found the primary task too easy or simply wish to
+                    further demonstrate your abilities you may choose to
+                    complete any of the following:
+                </p>
+                <ul>
+                    <li>Improve or restyle this page</li>
+                    <li>Add unit tests for the event bus implementation</li>
+                    <li>
+                        Build the implementation using a framework of your
+                        choice (Vue, Angular, Svelte etc.)
+                    </li>
+                </ul>
+            </div>
+            <div class="app__task">
+                <h2>Implementation</h2>
+                <div class="event-panes" layout="row top-justify">
+                    <div
+                        class="event-pane event-pane--on"
+                        self="size-1of2"
+                        data-subscription="on"
+                    >
+                        <h3 class="event-pane__title">On</h3>
+                        <div>
+                            <input
+                                type="text"
+                                class="event-pane__input"
+                                placeholder="Event input arg..."
+                            />
+                        </div>
+                        <div>
+                            <button
+                                class="event-pane__trigger"
+                                data-event="event-1"
+                            >
+                                Emit Event 1
+                            </button>
+                        </div>
+                        <div>
+                            <button
+                                class="event-pane__trigger"
+                                data-event="event-2"
+                            >
+                                Emit Event 2
+                            </button>
+                        </div>
+                        <h5>Output</h5>
+                        <div class="event-pane__output"></div>
+                    </div>
+                    <div
+                        class="event-pane event-pane--once"
+                        self="size-1of2"
+                        data-subscription="once"
+                    >
+                        <h3 class="event-pane__title">Once</h3>
+                        <div>
+                            <input
+                                type="text"
+                                class="event-pane__input"
+                                placeholder="Event input arg..."
+                            />
+                        </div>
+                        <div>
+                            <button
+                                class="event-pane__trigger"
+                                data-event="event-1-once"
+                            >
+                                Emit Event 1
+                            </button>
+                        </div>
+                        <div>
+                            <button
+                                class="event-pane__trigger"
+                                data-event="event-2-once"
+                            >
+                                Emit Event 2
+                            </button>
+                        </div>
+                        <h5>Output</h5>
+                        <div class="event-pane__output"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="module" src="/src/index.ts"></script>
+    </body>
+</html>
